@@ -1,0 +1,18 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class OrderProductChecklist extends Model
+{
+    use HasFactory;
+    use SoftDeletes;
+    protected $table = 'order_product_checklists';
+    public function order_product_checklist_item_info()
+    {
+        return $this->hasMany(OrderProductChecklistItem::class, 'order_product_checklist_guid', 'order_product_checklist_guid');
+    }
+}
