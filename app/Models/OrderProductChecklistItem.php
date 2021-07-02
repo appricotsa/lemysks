@@ -15,4 +15,12 @@ class OrderProductChecklistItem extends Model
     {
         return $this->hasOne(GlobalList::class, 'list_guid', 'list_guid');
     }
+    public function images()
+    {
+        return $this->hasMany(OrderProductChecklistItemImage::class, 'order_product_checklist_item_guid', 'order_product_checklist_item_guid');
+    }
+    public function comments()
+    {
+        return $this->hasMany(OrderProductChecklistItemComment::class, 'order_product_checklist_item_guid', 'order_product_checklist_item_guid');
+    }
 }
