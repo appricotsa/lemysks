@@ -93,4 +93,19 @@ class MobileController extends Controller
             return response()->json($e, 400);
         }
     }
+    public function delete_items_comment(Request $r)
+    {
+        try {
+            return DB::transaction(function () use ($r) {
+                if (!$r->has('order_product_checklist_item_comment_guid')) {
+                    return response()->json('Eksik Bilgi Yollandı.', 400);
+                } else {
+                    OrderProductChecklistItemComment::where('order_product_checklist_item_comment_guid', $r->order_product_checklist_item_comment_guid)->delete();
+                    return response()->json(true, 200);
+                }
+            });
+        } catch (Exception $e) {
+            return response()->json($e, 400);
+        }
+    }
 }

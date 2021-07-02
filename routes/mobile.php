@@ -19,3 +19,4 @@ Route::post('sksInfo', [MobileController::class, 'sks_info']);
 Route::post('uploadItemsImage', [MobileController::class, 'upload_items_image']);
 Route::post('saveItemsImage', [MobileController::class, 'save_items_image']);
 Route::post('saveItemsComment', [MobileController::class, 'save_items_comment']);
+Route::post('deleteItemsComment', [MobileController::class, 'delete_items_comment']);
