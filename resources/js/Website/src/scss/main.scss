@@ -1,0 +1,41 @@
+//base styles
+@import "../scss/base/mixins/font";
+
+@import "../scss/base/base";
+
+@import "../scss/base/breakpoints";
+
+@import "../scss/base/fonts";
+
+@import "../scss/base/functions";
+
+@import "../scss/base/variables";
+
+//components
+@import "../scss/components/c-button";
+
+@import "../scss/components/c-icon";
+
+@import "../scss/components/c-section";
+
+@import "../scss/components/c-input";
+
+@import "../scss/components/c-go-top";
+
+@import "../scss/components/c-mobile-menu";
+
+@import "../scss/components/c-hamburger";
+
+//layout
+@import "../scss/layout/l-container";
+
+@import "../scss/layout/l-navbar";
+
+@import "../scss/layout/l-footer";
+
+//utility styles
+@import "../scss/utilities/padding";
+
+@import "../scss/utilities/margin";
+
+@import "../scss/utilities/other";

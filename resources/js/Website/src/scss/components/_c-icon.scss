@@ -1,0 +1,16 @@
+$sizes: (
+    default: 28px,
+    xs: 12px,
+    sm: 15px,
+    md: 20px,
+    lg: 22px,
+    xl: 32px,
+    xxl: 48px
+);
+
+@each $name, $size in $sizes {
+    .c-icon--#{$name} {
+        width: $size;
+        height: $size;
+    }
+}

@@ -1,0 +1,226 @@
+//
+// Button Colors
+// -------------------------
+$buttons: (
+    primary: (
+        var(--color-primary),
+        var(--color-primary-dark),
+        var(--color-white),
+        var(--color-primary),
+        var(--color-primary-light-30)
+    ),
+    secondary: (
+        var(--color-secondary),
+        var(--color-secondary-dark),
+        var(--color-white),
+        var(--color-secondary),
+        var(--color-secondary-light-30)
+    ),
+    alternative: (
+        var(--color-alternative),
+        var(--color-alternative-dark),
+        var(--color-white),
+        var(--color-alternative),
+        var(--color-alternative-light-30)
+    ),
+    gray: (
+        var(--color-gray-light),
+        var(--color-gray-dark),
+        var(--color-black-light-50),
+        var(--color-gray-light),
+        var(--color-gray-light-50)
+    ),
+    transparent: (
+        transparent,
+        none,
+        var(--color-primary),
+        none,
+        none
+    )
+);
+
+@each $name, $colors in $buttons {
+    $bg-color: nth($colors, 1);
+    $hover-color: nth($colors, 2);
+    $text-color: nth($colors, 3);
+    $border-color: nth($colors, 4);
+    $light-color: nth($colors, 5);
+
+    .c-button--#{"" + $name} {
+        background-color: $bg-color;
+        transition: $g-transition;
+        color: $text-color !important;
+        border: 1px solid $border-color !important;
+
+        &:hover {
+            background-color: $hover-color;
+            transition: $g-transition;
+            border: 1px solid $hover-color !important;
+        }
+    }
+
+    .c-button--outline-#{"" + $name} {
+        background-color: transparent;
+        transition: $g-transition;
+        color: $border-color !important;
+        border: 1px solid $bg-color !important;
+
+        &:hover {
+            color: var(--color-white) !important;
+            background-color: $hover-color;
+            transition: $g-transition;
+            border: 1px solid $hover-color !important;
+        }
+    }
+
+    .c-button--isLink-#{"" + $name} {
+        background-color: transparent;
+        transition: $g-transition;
+        color: $bg-color !important;
+        border: none !important;
+
+        &.c-button--isLink-gray {
+            color: $text-color !important;
+        }
+
+        &:hover {
+            background-color: $light-color !important;
+            color: $bg-color !important;
+            border: none !important;
+        }
+    }
+}
+
+.c-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    text-align: center;
+    user-select: none;
+    line-height: 23px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: $g-font-size-15;
+    white-space: nowrap;
+    overflow: hidden;
+    @include neue-medium;
+
+    &:focus {
+        outline: none;
+    }
+
+    &--transparent {
+        text-decoration: underline solid var(--color-gray) 2px !important;
+    }
+
+    &[disabled="disabled"] {
+        background-color: var(--color-gray-dark) !important;
+        border: 1px solid var(--color-gray-dark) !important;
+        box-shadow: 0 4px 10px var(--color-primary-shadow);
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    //
+    // Pill
+    //
+    &--pill {
+        border-radius: 50px;
+    }
+
+    //
+    // Custom Sizing
+    //
+    &--sm-w {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    &--md-w {
+        padding-left: 2.75rem;
+        padding-right: 2.75rem;
+    }
+
+    &--lg-w {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+
+    &--xl-w {
+        padding-left: 4.5rem;
+        padding-right: 4.5rem;
+    }
+
+    //
+    // Custom Sizing
+    //
+    &--block {
+        width: 100%;
+    }
+
+    &--sm {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        height: 35px;
+        font-size: $g-font-size-12;
+
+        &.c-button--only-icon {
+            width: 30px;
+            height: 30px;
+            padding: 0;
+        }
+    }
+
+    &--md {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        height: 40px;
+        font-size: $g-font-size-15;
+
+        &.c-button--only-icon {
+            width: 35px;
+            height: 35px;
+            padding: 0;
+        }
+    }
+
+    &--lg {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        height: 45px;
+        font-size: $g-font-size-18;
+
+        &.c-button--only-icon {
+            width: 40px;
+            height: 40px;
+            padding: 0;
+        }
+    }
+
+    &:not(.c-button--only-icon) {
+        svg {
+            margin-right: map-get($g-gaps, xsmall);
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .c-button {
+        &--big {
+            height: 55px;
+            font-size: $g-font-size-base;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .c-button {
+        &--extra-wide {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+}

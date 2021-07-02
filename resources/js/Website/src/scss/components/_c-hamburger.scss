@@ -1,0 +1,55 @@
+.c-hamburger {
+	display: none;
+}
+
+@include media-breakpoint-down(md) {
+	.c-hamburger {
+		display: flex;
+		align-items: center;
+		text-align: center;
+		height: 18px;
+		position: relative;
+
+		&__wrapper {
+			cursor: pointer;
+			display: inline-block;
+			width: auto;
+			height: 25px;
+			margin: 0 auto;
+			transition: all 0.5s ease;
+		}
+
+		&__bar {
+			display: block;
+			height: 2px;
+			width: 25px;
+			background: var(--color-secondary);
+			margin: 4px auto;
+			transition: all 0.5s ease;
+			border-radius: 100px;
+
+			&--middle {
+				margin: 0 auto;
+			}
+		}
+
+		&--isActive {
+			.c-hamburger__bar {
+				background-color: var(--color-primary);
+
+				&--top {
+					transform: translateY(8px) rotateZ(45deg);
+				}
+
+				&--middle {
+					width: 0;
+					opacity: 0;
+				}
+
+				&--bottom {
+					transform: translateY(-4px) rotateZ(-45deg);
+				}
+			}
+		}
+	}
+}

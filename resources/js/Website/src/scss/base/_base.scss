@@ -1,0 +1,112 @@
+@import "./variables";
+@import "./breakpoints";
+
+//
+// Base
+//-------------------------
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+:root {
+    --color-primary-dark: rgb(0, 37, 55); //002537
+    --color-primary: rgb(10, 37, 64); //0a2540
+    --color-primary-light-60: rgba(10, 37, 64, 0.6); //0a254099
+    --color-primary-light-40: rgba(10, 38, 66, 0.4); //0a264266
+    --color-primary-light-30: rgba(10, 38, 66, 0.3); //0a264266
+
+    --color-secondary-dark: rgb(42, 95, 158); //2a5f9e
+    --color-secondary: rgb(0, 122, 181); //007ab5
+    --color-secondary-light-60: rgba(0, 121, 181, 0.6); //0079b599
+    --color-secondary-light-40: rgba(0, 121, 181, 0.4); //0079b566
+    --color-secondary-light-30: rgba(0, 121, 181, 0.3); //0079b566
+
+    --color-alternative-dark: rgb(248, 130, 27); //f8821b
+    --color-alternative: rgb(253, 150, 61); //fd963d
+    --color-alternative-light: rgba(253, 151, 61, 0.6); //fd973d99
+    --color-alternative-light-40: rgba(253, 151, 61, 0.4); //fd973d99
+    --color-alternative-light-30: rgba(253, 151, 61, 0.3); //fd963d
+
+    --color-gray-dark: rgb(216, 216, 216); //d8d8d8
+    --color-gray: rgb(114, 127, 140); //727f8c
+    --color-gray-light: rgb(242, 244, 246); //f2f4f6
+    --color-gray-light-60: rgba(66, 84, 102, 0.6); //42546699
+    --color-gray-light-40: rgb(242, 244, 246, 0.4); //f2f4f
+    --color-gray-light-30: rgb(242, 244, 246, 0.2); //f2f4f6
+
+    --color-white: #fff;
+    --color-white-light-95: rgba(255, 255, 255, 0.95);
+    --color-white-light-60: rgba(255, 255, 255, 0.6);
+    --color-white-light-20: rgba(255, 255, 255, 0.2);
+
+    --color-black: #000;
+    --color-black-light-60: rgba(0, 0, 0, 0.6);
+    --color-black-light-50: rgba(0, 0, 0, 0.5);
+    --color-black-light-40: rgba(0, 0, 0, 0.4);
+    --color-black-light-20: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    overflow-x: hidden !important;
+    @include neue-medium;
+}
+
+h1,
+.h1 {
+    font-size: $g-font-size-h1;
+    // font-family: $g-font-weight-semibold;
+}
+
+h2,
+.h2 {
+    font-size: $g-font-size-h2;
+    // font-family: $g-font-weight-semibold;
+}
+
+h3,
+.h3 {
+    font-size: $g-font-size-h3;
+    // font-family: $g-font-weight-semibold;
+}
+
+h4,
+.h4 {
+    font-size: $g-font-size-h4;
+    // font-family: $g-font-weight-semibold;
+}
+
+h5,
+.h5 {
+    font-size: $g-font-size-h5;
+    // font-family: $g-font-weight-semibold;
+}
+
+h6,
+.h6 {
+    font-size: $g-font-size-h6;
+    // font-family: $g-font-weight-semibold;
+}
+
+a {
+    text-decoration: none !important;
+    color: unset;
+
+    &:hover {
+        color: unset;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    h1,
+    .h1 {
+        font-size: $g-font-size-h3;
+        // font-family: $g-font-weight-semibold;
+    }
+
+    h2,
+    .h2 {
+        font-size: $g-font-size-h2;
+        // font-family: $g-font-weight-semibold;
+    }
+}

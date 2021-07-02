@@ -1,0 +1,101 @@
+.c-input {
+    font-size: $g-font-size-14;
+    border: 0;
+    border: 2px solid transparent;
+    @include neue-light;
+    border-radius: 8px;
+    padding: 9px 35px;
+    cursor: text;
+    color: var(--color-primary);
+    width: 100%;
+    border: 1px solid var(--color-gray-light);
+
+    &--transparent {
+        background-color: transparent;
+        color: var(--color-white) !important;
+
+        &__label {
+            color: var(--color-white) !important;
+        }
+
+        &:focus {
+            outline: 0;
+            border-bottom: 1px solid var(--color-white) !important;
+        }
+    }
+
+    &--gray {
+        background-color: #f2f2f2;
+    }
+
+    &--small {
+        padding: 7px 20px !important;
+    }
+
+    &__wrapper {
+        &--has-shadow {
+            position: relative;
+            overflow: visible;
+
+            &::before {
+                content: "";
+                background: rgba(69, 69, 69, 0.3);
+                filter: blur(25px);
+                border-radius: 8px;
+                width: 95%;
+                height: 20%;
+                position: absolute;
+                z-index: -1;
+                bottom: 45%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &__desc {
+        font-size: $g-font-size-13;
+        color: var(--color-primary-light-40);
+        @include neue-light;
+        margin-top: map-get($g-gaps, xsmall);
+    }
+
+    &:focus {
+        outline: 0;
+        border: 1px solid var(--color-secondary-light-60);
+
+        &::-webkit-input-placeholder {
+            opacity: 1;
+        }
+    }
+
+    &::-webkit-input-placeholder {
+        @include neue-light;
+        transition: inherit;
+        color: var(--color-black-light-50);
+    }
+
+    &__label {
+        @include neue-light;
+        font-size: $g-font-size-13;
+        color: var(--color-secondary);
+        margin-bottom: 0;
+    }
+
+    &,
+    &__label {
+        transition: all 0.2s;
+        touch-action: manipulation;
+    }
+
+    &__textarea {
+        padding: 7px 20px !important;
+        background-color: #f2f2f2;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .c-input {
+        padding: 15px 35px;
+    }
+}

@@ -1,0 +1,29 @@
+@mixin neue-light {
+    font-family: Neue-Haas-Light;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin neue-medium {
+    font-family: Neue-Haas-Medium;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin neue-bold {
+    font-family: Neue-Haas-Bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin poppins-light {
+    font-family: Poppins-Light;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin poppins-medium {
+    font-family: Poppins-Medium;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
