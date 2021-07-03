@@ -57,7 +57,7 @@ class MobileController extends Controller
     public function upload_items_image(Request $r)
     {
         $imageName = Str::uuid() . '-' . pathinfo($r->file('image')->getClientOriginalName(), PATHINFO_FILENAME);
-        $r->file('image')->move(storage_path('app/public/images/items'),  $imageName . '.jpg');
+        $r->file('image')->move(storage_path('app/public/images/products'),  $imageName . '.jpg');
         $d['image'] = $imageName . '.jpg';
         return response()->json($d, 200);
     }
@@ -235,7 +235,7 @@ class MobileController extends Controller
     public function save_product_image(Request $r)
     {
         $imageName = Str::uuid() . '-' . pathinfo($r->file('image')->getClientOriginalName(), PATHINFO_FILENAME);
-        $r->file('image')->move(storage_path('app/public/images/items'),  $imageName . '.jpg');
+        $r->file('image')->move(storage_path('app/public/images/products'),  $imageName . '.jpg');
         $d['image'] = $imageName . '.jpg';
         return response()->json($d, 200);
     }
