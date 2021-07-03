@@ -21,6 +21,6 @@ class OrderProductChecklistItem extends Model
     }
     public function comments()
     {
-        return $this->hasMany(OrderProductChecklistItemComment::class, 'order_product_checklist_item_guid', 'order_product_checklist_item_guid');
+        return $this->hasMany(OrderProductChecklistItemComment::class, 'order_product_checklist_item_guid', 'order_product_checklist_item_guid')->orderBy('created_at', 'DESC');
     }
 }

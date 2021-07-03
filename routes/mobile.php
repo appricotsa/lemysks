@@ -20,3 +20,12 @@ Route::post('uploadItemsImage', [MobileController::class, 'upload_items_image'])
 Route::post('saveItemsImage', [MobileController::class, 'save_items_image']);
 Route::post('saveItemsComment', [MobileController::class, 'save_items_comment']);
 Route::post('deleteItemsComment', [MobileController::class, 'delete_items_comment']);
+Route::post('saveText', [MobileController::class, 'save_text']);
+Route::post('deleteItemsImage', [MobileController::class, 'delete_items_image']);
+Route::post('changeItemChecked', [MobileController::class, 'change_item_checked']);
+Route::post('deleteCheckList', [MobileController::class, 'delete_check_list']);
+Route::post('deleteCheckList', [MobileController::class, 'delete_check_list']);
+Route::post('NewOrder', [MobileController::class, 'new_order']);
+Route::post('saveProductImage', [MobileController::class, 'save_product_image']);
+Route::post('saveProduct', [MobileController::class, 'save_product']);
+Route::post('deleteProduct', [MobileController::class, 'delete_product']);
