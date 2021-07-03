@@ -74,7 +74,7 @@ class MobileController extends Controller
                     $image->order_product_checklist_item_guid = $r->order_product_checklist_item_guid;
                     $image->image = $r->image;
                     $image->save();
-                    return response()->json(true, 200);
+                    return response()->json($image, 200);
                 }
             });
         } catch (Exception $e) {
